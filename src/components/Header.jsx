@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useState } from "react"
+import Link from "gatsby-link"
 
 import "./scss/Header.scss"
 
@@ -8,16 +9,29 @@ function Header(props) {
   //  Project
   //  Default
 
-  const NavList = {
-    homePage: {
+  const [navList, setNavList] = useState([
+    //
+    //Navigation Bar
+
+    {
+      key: 1,
       slug: "/",
       linkText: "Home",
     },
-    cvPage: {
+    {
+      key: 2,
       slug: "/cv",
       linkText: "CV",
     },
-  }
+  ])
+
+  const [navDisplay, setNavDisplay] = useState(
+    <ul>
+      {navList.map(link => (
+        <li key={link.key}>{link.linkText}</li>
+      ))}
+    </ul>
+  )
 
   switch (props.type) {
     case "index":
@@ -31,7 +45,7 @@ function Header(props) {
             alt=""
           />
 
-          <nav className="page-header-navigation"></nav>
+          <nav className="page-header-navigation">{navDisplay}</nav>
         </header>
       )
   }
