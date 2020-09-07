@@ -16,13 +16,7 @@ import "./scss/Header.scss"
 //Icon Imports
 import { Github, Linkedin, Gmail } from "@icons-pack/react-simple-icons"
 
-function Header(props) {
-  //Possible Headers:
-  //  Index
-  //  CV
-  //  Project
-  //  Default
-
+function Header() {
   const [navList] = useState(
     [
       //
@@ -49,14 +43,6 @@ function Header(props) {
         slug: "/Cv",
         linkText: "CV",
       },
-      //   {
-      //     id: "Github",
-      //     className: "nav-link nav-link-github",
-      //     key: 3,
-      //     slug: "https://github.com/DanJLake/",
-      //     linkText: "Github",
-      //     icon: <Github />,
-      //   },
 
       //
       //End of Navigation Bar
@@ -126,7 +112,7 @@ function Header(props) {
     ))
   )
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" className="sticky-top">
       <Navbar.Brand as={Link} to="/">
         Daniel Lake
       </Navbar.Brand>

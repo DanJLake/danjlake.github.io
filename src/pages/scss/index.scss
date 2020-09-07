@@ -1,0 +1,38 @@
+.index-frontpage {
+  display: flex;
+  flex-flow: column;
+
+  position: relative;
+
+  border: 1px solid black;
+
+  height: calc(100vh - 116px);
+  width: 100vw;
+
+  .index-frontpage-text {
+    flex: 4 1;
+    color: rgb(84, 84, 84);
+    h1 {
+      margin: 50px 50px 0;
+      font-size: 100px;
+    }
+
+    h2 {
+      margin: 10px 85px;
+      font-size: 40px;
+
+      .frontpage-h2-text {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .index-frontpage-icons {
+    flex: 1 1;
+    align-self: flex-end;
+    margin: 0 50px 25px;
+    * {
+      margin: 0 25px;
+    }
+  }
+}
